@@ -142,4 +142,3 @@ while True:
 
 # EXIT 
 print("You have successfully exited the program!")
-print("Feel free to visit me over at www.knowwwcybersecurity.com")
