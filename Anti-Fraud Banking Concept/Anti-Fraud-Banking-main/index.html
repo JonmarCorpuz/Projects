@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti Fraud Banking (Version 1.1.0)</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="Header">
+        <h1>Anti-Fraud Banking</h1> 
+        <h3>(Version 1.1.0)</h3>
+    </div>
+    
+    <div id="SubHeader">
+        <h3>Digital Bank Card</h3>
+    </div>
+
+    <div id="Card">
+        <!--  DISPLAY CARD HOLDER NAME  -->
+        <h5><pre><sub>Cardholder Name</sub></pre></h5>
+        <h2>KnowCybersecurity</h2>
+            
+        <!--  DISPLAY RANDOMLY GENERATED CC NUMBER  -->
+        <h5><pre><sub>Card Number</sub></pre></h5>
+        <h2 id="CardNumber"></h2>
+
+        <!--  DISPLAY EXPIRATION DATE & CVC  -->
+        <h5><pre><sub>Exp         CVV </sub></pre></h5>
+        <h2 id="ExpirationDate_CVC"></h2>
+
+        <!--  DISPLAY COUNTDOWN TIMER  -->
+        </div>
+
+    <br>
+
+    <h5 id="Timer">10 seconds until a new card number is generated</h5>
+
+    <h3>Support</h3>
+    <div id="CustomerSupport">
+        <h5>Want to block your card? <a onclick="BlockCard()">Click <strong>here</strong></a></h5>
+        <h5>Want to unblock your card? <a onclick="UnblockCard()">Click <strong>here</strong></a></h5>
+        <h5>Want to generate a new card number? <a onclick="GenerateNewCardNumber()">Click here</a></h5>
+        <h5>Want to generate a new CVV? <a onclick="GenerateNewCVV()">Click here</a></h5>
+    </div>
+        
+    <h6>Source code: <a href=https://github.com/KnowCybersecurity/Anti-Fraud-Banking>https://github.com/KnowCybersecurity/Anti-Fraud-Banking</a></h6>
+
+    <script src="script.js"></script>
+</body>
+</html>
