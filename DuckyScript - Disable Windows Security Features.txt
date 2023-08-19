@@ -1,3 +1,5 @@
+REM - ATTENTION: This script requires Administrator privileges in order to run
+
 REM - Open a command prompt as Administrator
 REM -------------------------- 
 
