@@ -1,4 +1,5 @@
 REM - ATTENTION: This script requires Administrator privileges in order to run
+REM - DISCLAIMER: This script was made for educational purposes only and isn't intended for any sort of malicious use.
 
 REM - Open a command prompt as Administrator
 REM -------------------------- 
