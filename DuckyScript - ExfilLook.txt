@@ -8,8 +8,7 @@ REM -      (_.'  `._)(            `-'    `-'     `-...-'    `-...-'       `._)
 REM - by Jonmar Corpuz
 REM -------------------------- 
 
-REM - ExfilLook is a tool used to fetch data from a compromised Windows system and exfiltrate that data through Outlook.
-REM - ExfilLool is a BadUSB script written in DuckyScript
+REM - ExfilLool is used as a BadUSB exploit written in DuckyScript that's used used to fetch data from a compromised Windows system and exfiltrate that data through Outlook.
 REM -------------------------- 
 
 REM - Step 1: Add an Outlook account (If one already exists then the command won't really do anything)
