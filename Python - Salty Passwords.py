@@ -1,8 +1,3 @@
-""" IMPORT MODULES """
-from CLASSES import *
-from FUNCTIONS import *
-
-
 """ FUNCTIONS """
 def ASCIIart():
     print("""
