@@ -20,7 +20,7 @@ REM - [*] This script may be modified to fit your needs and specifications.
 REM -------------------------- 
 
 REM - DISCLAIMERS
-REM - [*] This tools is made for educational purposes only and should only be tested on machines and systems that you have permission to test or personally own.
+REM - [*] This tool is made for educational purposes only and should only be tested on machines and systems that you have permission to test or personally own.
 REM -------------------------- 
 
 REM - Step 1: Add an Outlook account (If one already exists then the payload will just walk through the commands without changing anything)
