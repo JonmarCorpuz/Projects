@@ -27,7 +27,7 @@ To complete this project, we used the SCRUM project management approach.
 
 - An equipment reservation system
 
-- Integrated APIs
+- Integrated APIs with the software (?)
 
 # Project Procedures
 
