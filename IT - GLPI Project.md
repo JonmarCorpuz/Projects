@@ -43,7 +43,15 @@ sudo apt update
 sudo  apt -y upgrade
 ```
 
-3. 
+3. Install the MariaDB server package
+```Bash
+sudo apt install mariadb-server
+```
+
+4. Install and configure the newly installed MariaDB server
+```Bash
+sudo mysql_secure_insallation
+```
 
 ```Bash
 #!/bin/bash
