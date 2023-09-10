@@ -33,6 +33,18 @@ To complete this project, we used the SCRUM project management approach.
 
 ## Installing GLPI
 
+1. Update Ubuntu (?)
+```Bash
+sudo apt update
+```
+
+2. Ugrade installed packages
+```Bash
+sudo  apt -y upgrade
+```
+
+3. 
+
 ```Bash
 #!/bin/bash
 
