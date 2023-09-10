@@ -53,6 +53,17 @@ sudo apt install mariadb-server
 sudo mysql_secure_insallation
 ```
 
+5. Create a database and user for GLPI
+```Bash
+sudo mysql -u root -p
+CREATE DATABASE <DATABASE NAME>;
+CREATE USER <USER>@<DOMAIN> IDENTIFIED BY <PASSWORD>;
+GRANT ALL PRIVILEGES ON <DATABASE NAME>.* TO <USER>@<DOMAIN>;
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+Full script:
 ```Bash
 #!/bin/bash
 
