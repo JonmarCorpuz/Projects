@@ -63,6 +63,52 @@ FLUSH PRIVILEGES;
 EXIT;
 ```
 
+6. Install PHP
+```Bash
+sudo apt -y install php php-{curl,zip,bz2,gd,imagick,intl,apcu,memcache,imap,mysql,cas,ldap,tidy,pear,xmlrpc,pspell,mbstring,json,iconv,xml,gd,xsl}
+```
+
+7. Install Apache2
+```Bash
+sudo apt -y install apache2 libapache2-mod-php
+```
+
+8. Add the `httpOnly` flag to the cookie using the Mousepad text editor
+```Bash
+sudo apt install mousepad
+```
+```Bash
+sudo mousepad /etc/php/*/apache2/php.ini
+```
+![]()
+![]()
+
+9. Download an archive of the latest version of GLPI from Github using the `curl` command
+```Bash
+sudo apt-get -y install wget curl
+```
+```Bash
+TMP=$(curl -s https://api.github.com/repos/glpi-project/glpi/releases/latest|grep tag_name|cut -d '"' -f 4)
+```
+```Bash
+wget https://github.com/glpi-project/glpi/releases/download/$TMP/glpi-$TMP.tgz
+```
+
+10. Uncompress the downloaded archive
+```Bash
+tar xvf glpi-$TMP.tgz
+```
+
+11. Move the created GLPI folder to the `/var/www/html` directory
+```Bash
+sudo mv glpi /var/www/html
+```
+
+12. Give Apache user ownership of the GLPI directory
+```Bash
+sudo chown -R www-data:www-data /var/www/html/
+```
+
 Full script:
 ```Bash
 #!/bin/bash
