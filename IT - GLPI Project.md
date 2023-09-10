@@ -18,7 +18,16 @@ To complete this project, we used the SCRUM project management approach.
 
 ## Product Objectives
 
--
+- The software should be able to inventory at minimum the following elements:
+  -  All types of network equipment in the IT department using the SNMP (Simple Network Management Protocol) protocol
+  -  All type 1 hypervisors using GLPI
+  -  All Windows and Linux computers using agents in client-server relationship mode
+ 
+- A ticketing system that resembles a service catalog that has a functional email notification system
+
+- An equipment reservation system
+
+- Integrated APIs
 
 # Project Procedures
 
