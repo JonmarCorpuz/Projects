@@ -10,6 +10,8 @@ To complete this project, we used the SCRUM project management approach.
 
 # Project Objectives
 
+- Create a **project charter**
+
 # Project Procedures
 
 ## Installing GLPI
@@ -77,16 +79,16 @@ firefox "<IP>/glpi"
 
 ## Installing GLPI
 
-* https://computingforgeeks.com/how-to-install-glpi-on-ubuntu-linux/?expand_article=1
-* https://www.youtube.com/watch?v=oU1ZJ5uHTkw
-* https://glpi-project.org/
+- https://computingforgeeks.com/how-to-install-glpi-on-ubuntu-linux/?expand_article=1
+- https://www.youtube.com/watch?v=oU1ZJ5uHTkw
+- https://glpi-project.org/
 
 ## DNS Server Configuration
 
-* https://ubuntu.com/server/docs/service-domain-name-service-dns
+- https://ubuntu.com/server/docs/service-domain-name-service-dns
 
 ## Active Directory (AD) Implementation
 
-* https://rdr-it.com/en/glpi-link-with-an-active-directory/
-* https://glpi-install.readthedocs.io/en/latest/command-line.html#ldap-synchonization
-* https://glpi-user-documentation.readthedocs.io/fr/latest/modules/configuration/authentication/ldap.html
+- https://rdr-it.com/en/glpi-link-with-an-active-directory/
+- https://glpi-install.readthedocs.io/en/latest/command-line.html#ldap-synchonization
+- https://glpi-user-documentation.readthedocs.io/fr/latest/modules/configuration/authentication/ldap.html
