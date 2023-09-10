@@ -167,7 +167,17 @@ ifconfig
 firefox "<IP>/glpi"
 ```
 
-## Configuring Our DNS Server
+## Install a DNS Server on Ubuntu Server
+
+1. -
+```Bash
+sudo apt install bind9
+```
+
+2. -
+```Bash
+sudo apt install dnsutils
+```
 
 # Sources
 
