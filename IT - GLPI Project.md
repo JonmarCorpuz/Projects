@@ -10,7 +10,15 @@ To complete this project, we used the SCRUM project management approach.
 
 # Project Objectives
 
+## Documentation Objectives
+
 - Create a **project charter**
+- Create a **product backlog**
+- Provide the **SCRUM master schedule** from the start of the project to the end of the project
+
+## Product Objectives
+
+-
 
 # Project Procedures
 
