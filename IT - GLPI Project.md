@@ -167,7 +167,7 @@ ifconfig
 firefox "<IP>/glpi"
 ```
 
-## Install a DNS Server on Ubuntu Server
+## Install and Configure a DNS Server on Ubuntu Server
 
 1. -
 ```Bash
