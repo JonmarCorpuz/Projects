@@ -167,17 +167,11 @@ ifconfig
 firefox "<IP>/glpi"
 ```
 
-## Install and Configure a DNS Server on Ubuntu Server
+## Install and Configure Active Directory on Windows Server
 
-1. -
-```Bash
-sudo apt install bind9
-```
 
-2. -
-```Bash
-sudo apt install dnsutils
-```
+## Install and Configure a DNS Server on Windows Server Using Active Directory
+
 
 # Sources
 
