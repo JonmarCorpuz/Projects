@@ -167,7 +167,13 @@ ifconfig
 firefox "<IP>/glpi"
 ```
 
-## Install and Configure Active Directory on Windows Server
+## Install and Configure Active Directory on Windows Server 2019
+
+1. Download the ISO of Microsoft's Windows Server 2019
+
+2. After the Windows Server 2019 ISO image is finished installing create a new virtual machine
+
+3. 
 
 
 ## Install and Configure a DNS Server on Windows Server Using Active Directory
