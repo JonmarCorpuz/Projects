@@ -14,8 +14,3 @@
   5. The receiver will pass the received ciphertext and private key through a decryption algorithm
   6. The decryption algorithm will then perform some basic arithmetic using the data found in the private key in order to get the index position of each character from the original plaintext
 
-## Additional information:
-
-  + SET1 is static, meaning that it never changes
-  + SET2 is dynamic, meaning that everytime a subject wants to encrypt a message, it changes regardless of the message
-
