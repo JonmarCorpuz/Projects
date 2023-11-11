@@ -1,3 +1,0 @@
-# Switch Configuration
-
-# Router Configuration
