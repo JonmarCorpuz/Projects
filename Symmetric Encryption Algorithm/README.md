@@ -1,6 +1,6 @@
 # How It Works
 
-![](https://github.com/JonmarCorpuz/Encryption-Algorithm/blob/main/Assets/Encryption%20Algorithm%20Backend.png) 
+![](https://github.com/JonmarCorpuz/Projects/blob/main/Symmetric%20Encryption%20Algorithm/Assets/Encryption%20Algorithm%20Backend.png) 
 
 ## Encryption
 
