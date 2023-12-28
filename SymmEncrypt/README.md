@@ -1,6 +1,6 @@
 # How It Works
 
-![](https://github.com/JonmarCorpuz/Projects/blob/main/Projects/SymmEncrypt/Assets/Encryption%20Algorithm%20Backend.png) 
+![](https://github.com/JonmarCorpuz/Projects/blob/main/SymmEncrypt/JavaScript/Assets/Encryption%20Algorithm%20Backend.png) 
 
 ## Encryption
 
